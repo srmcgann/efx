@@ -231,7 +231,7 @@
           }
           if(type=='vid') src[1].defaultPlaybackRate = playbackSpeed
           console.log('setting playbackSpeed to = ' + playbackSpeed)
-          src[1].src=""
+          src[1].src=url
         }
       
         if(modes.indexOf('vignette')!==-1){
@@ -524,7 +524,6 @@
     type='img'
     src=[false, new Image()]
     src[1].onload=()=>{
-      console.log(src[1])
       src[0]=true
     }
     hideButton()
