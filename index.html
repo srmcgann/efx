@@ -524,6 +524,7 @@
     type='img'
     src=[false, new Image()]
     src[1].onload=()=>{
+      console.log(src[1])
       src[0]=true
     }
     hideButton()
