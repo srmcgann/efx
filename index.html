@@ -88,7 +88,7 @@
       }
       rsz()
 
-      Draw=()=>{
+      Draw = async () => {
         if(!t){
           modes = []
           window.location.href.split('?').map(v=>{
@@ -231,7 +231,10 @@
           }
           if(type=='vid') src[1].defaultPlaybackRate = playbackSpeed
           console.log('setting playbackSpeed to = ' + playbackSpeed)
-          src[1].src=url
+
+          await fetch(url).then(res=>res.blob()).then(data => {
+            src[1].src = URL.createObjectURL(data)
+          })
         }
       
         if(modes.indexOf('vignette')!==-1){
@@ -536,4 +539,3 @@
 </script>
   </body>
 </html>
-
